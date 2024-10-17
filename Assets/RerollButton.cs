@@ -19,7 +19,7 @@ public class RerollButton : MonoBehaviour
     }
     private void OnMouseUpAsButton()
     {
-        if (RerollCount == 2)
+        if (RerollCount == 3)
             return;
 
         Dice1.TryGetComponent<DiceLocked>(out var lockedDice1);
@@ -33,7 +33,10 @@ public class RerollButton : MonoBehaviour
             lockedDice3.IsLocked &&
             lockedDice4.IsLocked &&
             lockedDice5.IsLocked)
+        {
+            RerollCount++;
             return;
+        }
 
         if (!lockedDice1.IsLocked)
         {

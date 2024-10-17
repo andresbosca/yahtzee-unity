@@ -16,6 +16,7 @@ public class Summary : MonoBehaviour
 
     public Component RerollButton;
 
+    public Text RemainingAttempts;
     public Text Text;
     // Start is called before the first frame update
     void Start()
@@ -87,6 +88,7 @@ public class Summary : MonoBehaviour
         var maxPoints = allPoints.Max();
 
         Text.text = "Sum: " + maxPoints;
+        RemainingAttempts.text = "Remaining " + (3 - rerollButton.RerollCount);
     }  
     
     // Função para calcular pontuação simples (ex: todos os 1's somados)
